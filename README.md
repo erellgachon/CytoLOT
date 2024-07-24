@@ -1,4 +1,4 @@
-This is the code implementing ...
+This is the code implementing our paper *Low dimensional representation of multi-patient flow cytometry datasets using optimal transport for minimalresidual disease detection in leukemia*.
 
 # HIPC Dataset
 
@@ -39,8 +39,8 @@ This allows the visualisation of some potential clustering. In particular, in th
 
 ## FlowSOM
 
-The FlowSOM computations we use come from the following (package)[https://github.com/saeyslab/FlowSOM_Python].
+The FlowSOM computations we use come from the following [package](https://github.com/saeyslab/FlowSOM_Python).
 
 ## K-means
 
-For the K-means algorithm, we use the (scikit-learn package)[https://scikit-learn.org/stable/index.html#].
+For the K-means algorithm, we use the [scikit-learn package](https://scikit-learn.org/stable/index.html#).

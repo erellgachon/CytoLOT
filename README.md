@@ -1,4 +1,4 @@
-This is the code implementing our paper *Low dimensional representation of multi-patient flow cytometry datasets using optimal transport for minimalresidual disease detection in leukemia*.
+This is the code implementing our paper *Low dimensional representation of multi-patient flow cytometry datasets using optimal transport for minimalresidual disease detection in leukemia*. [[arXiv]](http://arxiv.org/abs/2407.17329).
 
 # HIPC Dataset
 

@@ -9,6 +9,7 @@ import linW2_utils as LinW2
 #### Wasserstein barycenter with fixed support ####
 ###################################################
 
+
 bary_kmeans_times = []
 for nb_clusters in [16, 32, 64, 128, 256, 512] :
     kmeans_centers = np.load("../Results/KMeans/Kmeans_centers_K"+str(nb_clusters)+".npy")

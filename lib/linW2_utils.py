@@ -19,10 +19,19 @@ def lin_mu(mu_support, mu_weights, ref_support, ref_weights) :
     '''
     Linearisation of the discrete measure mu w.r.t a reference measure    
     '''
+
+    #Computing an optimal transport plan between ref and mu
     cost_matrix = ot.dist(ref_support, mu_support)
     pi = ot.emd(ref_weights, mu_weights, cost_matrix)
+
+    #Computing an transport map from an optimal transport plan
     T = barycentric_projection(pi, mu_support)
-    T = np.sqrt(ref_weights[:,np.newaxis])*(T - mu_support)
+
+    #Reweighting the image vector to have a correct inner product in L2(ref)
+    T = np.sqrt(ref_weights[:,np.newaxis])*T 
+    
+    #The logarithmic map maps mu to T- id
+    T = T - ref_support
     return T
 
 def lin_OT(ref_support, ref_weights, mu_support, mu_weights) :
@@ -35,5 +44,4 @@ def lin_OT(ref_support, ref_weights, mu_support, mu_weights) :
     for n in range(N) :
         lin_data.append(lin_mu(mu_support, mu_weights[n], ref_support, ref_weights))
     lin_data = np.array(lin_data).reshape((N,-1))
-    lin_data = lin_data - np.mean(lin_data, axis=0)
     return lin_data

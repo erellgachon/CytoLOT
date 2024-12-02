@@ -2,7 +2,7 @@ This is the code implementing our paper *Low dimensional representation of multi
 
 # HIPC Dataset
 
-The data can be bound as CSV files in the folder Data/CSV/. The first two or three letters of the files correspond to a laboratory where the data analysis was performed. The following number correspond to the patient and the replicate of the biological sample.
+The data can be bound as CSV files in the folder Data/HIPC/Data/CSV/. The first two or three letters of the files correspond to a laboratory where the data analysis was performed. The following number correspond to the patient and the replicate of the biological sample.
 
 | Laboratory | Label |
 | ---------- | ----- |
@@ -31,7 +31,7 @@ The data can be bound as CSV files in the folder Data/CSV/. The first two or thr
 
 In this paper, we propose a low-dimensional representation of flow cytometry measurements modeled as high-dimensional probability distributions. This is achieved by a step of mean measure quantization followed by an embedding of thos low-dimensional measures into a linear space, using the theory of linearised optimal transport.
 
-![2-PCA on Kmeans+LinW2 on the HIPC dataset](./Results/images/PCA_linW2_KMeans.png)
+![2-PCA on Kmeans+LinW2 on the HIPC dataset](./Data/HIPC/Results/images/PCA_linW2_KMeans.png)
 
 This allows the visualisation of some potential clustering. In particular, in the above picture, we can distinguish patients even though flow cytometry measurements were analysed in different laboratories.
 

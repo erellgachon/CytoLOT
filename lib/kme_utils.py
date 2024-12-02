@@ -29,8 +29,8 @@ def featureMapping(x, sigma, s) :
 
 
 
-def measureEmbedding(P, sigma, s) :
-    ''' Embedding of the measure P via the means of all features mapping '''
+def measureEmbeddingRFF(P, sigma, s) :
+    ''' Embedding (Random Fourier Features) of the measure P via the means of all features mapping '''
     cpt = 0
     for i in range(len(P)) :
         cpt += featureMapping(P[i], sigma, s)

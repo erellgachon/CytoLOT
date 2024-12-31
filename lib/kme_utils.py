@@ -2,6 +2,14 @@ import numpy as np
 import pandas as pd
 from time import time
 
+def k(kernel, x, y, sigma=1) :
+    if kernel=="rbf" :
+        return np.exp(-np.linalg.norm(x-y)**2/(2*sigma**2))
+    elif kernel =="dot_product" :
+        return np.dot(x,y)
+    elif kernel == "quadratic_dot_product" :
+        return np.dot(x,y)+np.dot(x,y)**2
+
 def estimate_sigma(data) :
     ''' Estimates the bandwidth to take for the RBF kernel as the median of the squared distance
     between all pairs of points

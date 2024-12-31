@@ -24,7 +24,7 @@ def log(mu_support, mu_weights, ref_support, ref_weights) :
 
     #Computing an optimal transport plan between ref and mu
     cost_matrix = ot.dist(ref_support, mu_support)
-    pi = ot.emd(ref_weights, mu_weights, cost_matrix)
+    pi = ot.emd(ref_weights, mu_weights, cost_matrix,  numItermax=1000000)
 
     #Computing an transport map from an optimal transport plan
     T = barycentric_projection(pi, mu_support)

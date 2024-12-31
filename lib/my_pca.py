@@ -31,7 +31,6 @@ def pca_from_Gram(G, n_components=2) :
     idx = np.argsort(eigenvalues)[::-1]
     eigenvalues = eigenvalues[idx]
     eigenvectors = eigenvectors[:, idx]
-    eigenvectors = eigenvectors / np.linalg.norm(eigenvectors, axis=1)
     
     # Select the top n_components
     alphas = eigenvectors[:, : n_components]
@@ -40,7 +39,8 @@ def pca_from_Gram(G, n_components=2) :
     # Transform the data
     X_transformed = alphas * np.sqrt(lambdas)
 
+    #Normalize results
+    X_transformed = X_transformed / np.linalg.norm(X_transformed, axis= 0)
     return X_transformed
-
 
 
